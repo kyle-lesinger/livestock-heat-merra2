@@ -1,0 +1,73 @@
+# MERRA-2 Data Files (too large for git)
+daily_data/
+daily_data_soil_precip/
+temp_processing/
+temp_processing_soil/
+
+# NetCDF files (except masks)
+*.nc
+!masks/*.nc
+
+# Shapefiles (if copied into research)
+shpfiles/
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+tests/*.png
+tests/*.pdf
+
+# Images directory - keep directory but ignore large images if needed
+# (currently keeping all images)
+
+# Google Drive metadata
+.~*
