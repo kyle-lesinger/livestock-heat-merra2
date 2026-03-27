@@ -71,3 +71,9 @@ tests/*.pdf
 
 # Google Drive metadata
 .~*
+
+# Cattle data - Excel files and processed data too large for git
+*.xlsx
+~$*.xlsx
+cattle_data/*
+!cattle_data/README.md
