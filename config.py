@@ -3,13 +3,59 @@ Configuration module for livestock_and_heat project.
 Loads canonical state and region definitions from region_mask.nc.
 
 All notebooks should import from this module to ensure consistency.
+
+Path Configuration:
+-------------------
+Paths can be customized via .env file in the project root directory.
+See .env.example for configuration options.
+
+If .env is not present, defaults to relative paths from this file's location.
 """
 
+import os
 import xarray as xr
 from pathlib import Path
 
-# Path to region mask file
-MASK_FILE = Path(__file__).parent / 'masks' / 'region_mask.nc'
+# Try to load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # Load .env from project root
+except ImportError:
+    # python-dotenv not installed, will use defaults
+    pass
+
+# =============================================================================
+# DATA DIRECTORY PATHS
+# =============================================================================
+# All paths can be overridden via environment variables in .env file
+# Defaults assume notebooks are run from project root or use relative paths
+
+# Project root directory (location of this config.py file)
+PROJECT_ROOT = Path(__file__).parent
+
+# Override project root from environment if specified
+if os.getenv('PROJECT_ROOT'):
+    PROJECT_ROOT = Path(os.getenv('PROJECT_ROOT'))
+
+# Data directories - can be overridden via environment variables
+DAILY_DATA_DIR = Path(os.getenv('DAILY_DATA_DIR', PROJECT_ROOT / 'daily_data'))
+DAILY_DATA_SOIL_PRECIP_DIR = Path(os.getenv('DAILY_DATA_SOIL_PRECIP_DIR', PROJECT_ROOT / 'daily_data_soil_precip'))
+PROCESSED_NIGHTTIME_DIR = Path(os.getenv('PROCESSED_NIGHTTIME_DIR', PROJECT_ROOT / 'processed_nighttime_recovery'))
+PROCESSED_DAYTIME_DIR = Path(os.getenv('PROCESSED_DAYTIME_DIR', PROJECT_ROOT / 'processed_daytime_heat'))
+PROCESSED_VPD_DIR = Path(os.getenv('PROCESSED_VPD_DIR', PROJECT_ROOT / 'processed_vpd'))
+PROCESSED_WEEKLY_DIR = Path(os.getenv('PROCESSED_WEEKLY_DIR', PROJECT_ROOT / 'processed_weekly'))
+
+# Mask and cattle data
+MASKS_DIR = Path(os.getenv('MASKS_DIR', PROJECT_ROOT / 'masks'))
+CATTLE_DATA_DIR = Path(os.getenv('CATTLE_DATA_DIR', PROJECT_ROOT / 'cattle_data'))
+
+# Output directories
+FIGURES_DIR = Path(os.getenv('FIGURES_DIR', PROJECT_ROOT / 'figures'))
+IMAGES_DIR = Path(os.getenv('IMAGES_DIR', PROJECT_ROOT / 'images'))
+
+# Specific file paths
+MASK_FILE = MASKS_DIR / 'region_mask.nc'
+CATTLE_DATA_FILE = CATTLE_DATA_DIR / 'cattle_data_clean.csv'
 
 def load_region_mask_metadata():
     """Load state and region metadata from region_mask.nc"""
