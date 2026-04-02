@@ -38,16 +38,16 @@ if os.getenv('PROJECT_ROOT'):
     PROJECT_ROOT = Path(os.getenv('PROJECT_ROOT'))
 
 # Data directories - can be overridden via environment variables
-DAILY_DATA_DIR = Path(os.getenv('DAILY_DATA_DIR', PROJECT_ROOT / 'daily_data'))
-DAILY_DATA_SOIL_PRECIP_DIR = Path(os.getenv('DAILY_DATA_SOIL_PRECIP_DIR', PROJECT_ROOT / 'daily_data_soil_precip'))
-PROCESSED_NIGHTTIME_DIR = Path(os.getenv('PROCESSED_NIGHTTIME_DIR', PROJECT_ROOT / 'processed_nighttime_recovery'))
-PROCESSED_DAYTIME_DIR = Path(os.getenv('PROCESSED_DAYTIME_DIR', PROJECT_ROOT / 'processed_daytime_heat'))
-PROCESSED_VPD_DIR = Path(os.getenv('PROCESSED_VPD_DIR', PROJECT_ROOT / 'processed_vpd'))
-PROCESSED_WEEKLY_DIR = Path(os.getenv('PROCESSED_WEEKLY_DIR', PROJECT_ROOT / 'processed_weekly'))
+DAILY_DATA_DIR = Path(os.getenv('DAILY_DATA_DIR', PROJECT_ROOT / 'data' / 'daily_data'))
+DAILY_DATA_SOIL_PRECIP_DIR = Path(os.getenv('DAILY_DATA_SOIL_PRECIP_DIR', PROJECT_ROOT / 'data' / 'daily_data_soil_precip'))
+PROCESSED_NIGHTTIME_DIR = Path(os.getenv('PROCESSED_NIGHTTIME_DIR', PROJECT_ROOT / 'data' / 'processed_nighttime_recovery'))
+PROCESSED_DAYTIME_DIR = Path(os.getenv('PROCESSED_DAYTIME_DIR', PROJECT_ROOT / 'data' / 'processed_daytime_heat'))
+PROCESSED_VPD_DIR = Path(os.getenv('PROCESSED_VPD_DIR', PROJECT_ROOT / 'data' / 'processed_vpd'))
+PROCESSED_WEEKLY_DIR = Path(os.getenv('PROCESSED_WEEKLY_DIR', PROJECT_ROOT / 'data' / 'processed_weekly'))
 
 # Mask and cattle data
-MASKS_DIR = Path(os.getenv('MASKS_DIR', PROJECT_ROOT / 'masks'))
-CATTLE_DATA_DIR = Path(os.getenv('CATTLE_DATA_DIR', PROJECT_ROOT / 'cattle_data'))
+MASKS_DIR = Path(os.getenv('MASKS_DIR', PROJECT_ROOT / 'data' / 'masks'))
+CATTLE_DATA_DIR = Path(os.getenv('CATTLE_DATA_DIR', PROJECT_ROOT / 'data' / 'cattle_data'))
 
 # Output directories
 FIGURES_DIR = Path(os.getenv('FIGURES_DIR', PROJECT_ROOT / 'figures'))
