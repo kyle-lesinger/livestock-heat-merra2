@@ -55,18 +55,9 @@ notebooks/
   - Output: `../processed_vpd/region_*_vpd_stats.nc`
   - Metrics: Daily mean, max, and duration above thresholds
 
-- **aggregate_weekly_cattle_aligned.ipynb** - Aggregate daily data to weekly aligned with cattle data
-  - Input: Daily files from `../processed_*` directories and `../cattle_data/cattle_data_clean.csv`
-  - Output: `../processed_weekly/weekly_*.nc` (nighttime_recovery, daytime_heat, vpd)
-  - Aggregation: SUM for temperature thresholds, AVERAGE for VPD metrics
-  - Alignment: Saturday-ending weeks matching USDA cattle slaughter reporting periods
-  - Status: **REQUIRED** - All analysis notebooks depend on this weekly data
-
 ### 3. Analysis (03_analysis/)
 
 **Purpose**: Exploratory analysis and hypothesis testing notebooks
-
-**NOTE**: All analysis notebooks use weekly aggregated data from `processed_weekly/` directory, aligned with USDA cattle slaughter reporting weeks (Saturday ending dates).
 
 - **01_temporal_analysis.ipynb** - Time series analysis of heat metrics
   - Trends, seasonality, anomalies over time
@@ -152,13 +143,8 @@ Path("../../masks/region_mask.nc")
    - `02_data_processing/process_daytime_heat_stats.ipynb`
    - `02_data_processing/process_vpd_stats.ipynb`
 
-3. **Weekly Aggregation** (**REQUIRED** before analysis)
-   - `02_data_processing/aggregate_weekly_cattle_aligned.ipynb`
-   - Aligns daily climate data with cattle slaughter reporting weeks
-   - Produces `processed_weekly/` files used by all analysis notebooks
-
-4. **Analysis & Visualization** (exploratory, run in any order)
-   - `03_analysis/*.ipynb` (all require weekly aggregated data)
+3. **Analysis & Visualization** (exploratory, run in any order)
+   - `03_analysis/*.ipynb`
    - `04_visualization/*.ipynb`
 
 ## Notes
