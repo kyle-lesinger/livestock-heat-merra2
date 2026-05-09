@@ -1,0 +1,52 @@
+Feature,Importance,Category
+mean_vpd_max,2.343882440506577,Base
+mean_vpd_mean,2.204544961623626,Base
+mean_vpd_max_roll2,2.0608274526602135,Rolling Avg
+mean_vpd_mean_roll2,1.7252533375392562,Rolling Avg
+mean_vpd_max_lag1,1.6974374891533257,Lagged
+mean_nighttime_hours_above_24_lag2,1.5039537047163014,Lagged
+mean_nighttime_hours_above_24,1.4383041014251874,Base
+mean_nighttime_hours_above_24_roll2,1.4278983417540014,Rolling Avg
+region,1.3968881754246145,Regional
+mean_nighttime_hours_above_24_lag1,1.38769219311549,Lagged
+week_of_year,1.3553809800642553,Temporal
+extreme_heat_poor_recovery,1.3000785629193647,Interaction
+mean_vpd_mean_lag1,1.183576357101049,Lagged
+mean_vpd_max_roll4,1.1088963628680621,Rolling Avg
+mean_daytime_hours_above_30_lag4,1.027862855110128,Lagged
+mean_nighttime_hours_above_24_roll4,1.0171514092473901,Rolling Avg
+mean_vpd_max_lag4,1.0001973491071239,Lagged
+month,0.9966460862118958,Temporal
+mean_nighttime_hours_above_21_lag2,0.9931840691069672,Lagged
+mean_daytime_hours_above_35,0.956888325950431,Base
+mean_nighttime_hours_above_21_lag4,0.9139594137499201,Lagged
+mean_vpd_max_lag3,0.881456125181783,Lagged
+mean_vpd_mean_roll4,0.773795634052422,Rolling Avg
+mean_daytime_hours_above_30,0.6997444868111459,Base
+mean_vpd_mean_lag2,0.6954815954737325,Lagged
+mean_daytime_hours_above_30_roll2,0.6803721132334137,Rolling Avg
+mean_vpd_max_lag2,0.6668484720430776,Lagged
+mean_daytime_hours_above_30_lag1,0.6300782746583315,Lagged
+mean_daytime_hours_above_30_lag3,0.605352906014869,Lagged
+mean_daytime_hours_above_35_lag1,0.4624049422098673,Lagged
+mean_nighttime_hours_above_21_lag1,0.4206108791178509,Lagged
+mean_nighttime_hours_above_21_roll4,0.40586655458409543,Rolling Avg
+mean_nighttime_hours_above_24_lag3,0.3661408792225181,Lagged
+season_Winter,0.31766298878064153,Season
+mean_daytime_hours_above_35_lag2,0.31192796536466094,Lagged
+mean_vpd_mean_lag3,0.2828459122422462,Lagged
+mean_daytime_hours_above_35_roll4,0.2623447976524357,Rolling Avg
+mean_daytime_hours_above_35_roll2,0.26121913904415234,Rolling Avg
+mean_nighttime_hours_above_24_lag4,0.24928533021309107,Lagged
+mean_daytime_hours_above_30_roll4,0.2250403249761211,Rolling Avg
+season_Spring,0.21628178198452122,Season
+mean_nighttime_hours_above_21_roll2,0.2140212840573932,Rolling Avg
+mean_nighttime_hours_above_21_lag3,0.16726733878698777,Lagged
+mean_vpd_mean_lag4,0.13135199913734488,Lagged
+mean_daytime_hours_above_30_lag2,0.1308427785267571,Lagged
+mean_daytime_hours_above_35_lag3,0.12484437293619703,Lagged
+season_Fall,0.07372182760818344,Season
+heat_vpd_interaction,0.051610801188363704,Interaction
+season_Summer,0.02437748005715661,Season
+mean_nighttime_hours_above_21,0.003042872263241912,Base
+mean_daytime_hours_above_35_lag4,0.0010979676222997714,Lagged

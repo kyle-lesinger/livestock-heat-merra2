@@ -1,0 +1,57 @@
+{
+  "file": "/Users/klesinger/Library/CloudStorage/GoogleDrive-kdl0040@uah.edu/My Drive/VEDA/Stories/livestock_and_heat/research/notebooks/03_analysis/../../data/processed_weekly/analysis_ready_2020_summer.csv",
+  "created": "2026-04-02 08:42:57",
+  "rows": 28,
+  "columns": 117,
+  "regions": [
+    "region_4",
+    "region_6"
+  ],
+  "date_range": {
+    "start": "2020-06-06 00:00:00",
+    "end": "2020-09-05 00:00:00"
+  },
+  "outcome_variables": [
+    "slaughter_beef_dairy",
+    "log_slaughter_beef_dairy",
+    "slaughter_dairy",
+    "log_slaughter_dairy"
+  ],
+  "base_predictors": [
+    "night_strong_recovery_hrs_sum",
+    "night_reasonable_recovery_hrs_sum",
+    "night_weak_recovery_hrs_sum",
+    "night_poor_recovery_hrs_sum",
+    "night_bad_hrs_sum",
+    "night_below_0c_hrs_sum",
+    "night_below_neg5c_hrs_sum",
+    "night_below_neg10c_hrs_sum",
+    "day_above_25c_hrs_sum",
+    "day_above_30c_hrs_sum",
+    "day_above_35c_hrs_sum",
+    "day_above_40c_hrs_sum",
+    "day_below_5c_hrs_sum",
+    "day_below_0c_hrs_sum",
+    "day_below_neg5c_hrs_sum",
+    "vpd_afternoon_mean_mean",
+    "vpd_afternoon_max_mean",
+    "vpd_afternoon_min_mean",
+    "tas",
+    "tas_max",
+    "day_heat_x_vpd",
+    "bad_night_into_heat_sum"
+  ],
+  "lagged_predictors": [
+    "night_strong_recovery_hrs_sum_lag1",
+    "night_reasonable_recovery_hrs_sum_lag1",
+    "night_weak_recovery_hrs_sum_lag1",
+    "night_poor_recovery_hrs_sum_lag1",
+    "night_bad_hrs_sum_lag1",
+    "night_below_0c_hrs_sum_lag1",
+    "night_below_neg5c_hrs_sum_lag1",
+    "night_below_neg10c_hrs_sum_lag1",
+    "day_above_25c_hrs_sum_lag1",
+    "day_above_30c_hrs_sum_lag1"
+  ],
+  "notes": "Missing outcome values dropped. Log-transformed outcomes include +0.1 constant."
+}
