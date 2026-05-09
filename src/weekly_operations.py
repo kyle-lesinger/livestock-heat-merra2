@@ -2,12 +2,71 @@
 Weekly Operations
 
 Functions for weekly data operations including lagged variables,
-cattle data reshaping, and climate-cattle data merging.
+cattle data reshaping, climate-cattle data merging, cyclical time
+features, and zero-inflated predictor handling.
 """
 
 from typing import List, Optional
 import pandas as pd
 import numpy as np
+
+
+def add_cyclical_time_features(df: pd.DataFrame, date_col: str = 'week_ending') -> pd.DataFrame:
+    """
+    Add sin/cos cyclical encoding of week-of-year for seasonal modeling.
+
+    Replaces one-hot season dummies and raw month/week_of_year with two
+    smooth features that respect the circular nature of weeks (week 52
+    is adjacent to week 1).
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame with a datetime column.
+    date_col : str, default='week_ending'
+        Name of the datetime column.
+
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with added 'week_sin' and 'week_cos' columns.
+    """
+    out = df.copy()
+    week_of_year = pd.to_datetime(out[date_col]).dt.isocalendar().week.astype(float)
+    out['week_sin'] = np.sin(2 * np.pi * week_of_year / 52)
+    out['week_cos'] = np.cos(2 * np.pi * week_of_year / 52)
+    return out
+
+
+def create_zero_inflated_features(
+    df: pd.DataFrame,
+    cols: List[str]
+) -> pd.DataFrame:
+    """
+    Create binary indicator and log1p features for zero-inflated predictors.
+
+    For each column in `cols`, adds:
+    - `{col}_has`: binary 1 if value > 0, else 0
+    - `{col}_log1p`: np.log1p(value), compresses right tail while keeping 0 at 0
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame with zero-inflated predictor columns.
+    cols : list of str
+        Column names to transform.
+
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with added binary and log1p columns.
+    """
+    out = df.copy()
+    for col in cols:
+        if col in out.columns:
+            out[f'{col}_has'] = (out[col] > 0).astype(int)
+            out[f'{col}_log1p'] = np.log1p(out[col])
+    return out
 
 
 def create_lagged_variables(

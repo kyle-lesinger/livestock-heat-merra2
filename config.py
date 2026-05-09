@@ -134,6 +134,17 @@ CATTLE_REGIONS = {
     'region_6': ['Arkansas', 'Louisiana', 'New Mexico', 'Oklahoma', 'Texas']
 }
 
+# Display names for plots and tables
+REGION_DISPLAY_NAMES = {
+    'region_4': 'Southeast (Region 4)',
+    'region_6': 'South Central (Region 6)',
+}
+
+REGION_SHORT_NAMES = {
+    'region_4': 'SE (Region 4)',
+    'region_6': 'SC (Region 6)',
+}
+
 # State IDs for cattle regions
 CATTLE_REGION_IDS = {
     'region_4': [1, 8, 9, 15, 23, 25, 38, 40],  # Region 4 states
@@ -386,3 +397,31 @@ CATTLE_WEEK = {
     'description': 'USDA cattle slaughter data reports weekly totals ending on Saturday',
     'aggregation': 'Climate data aggregated to match these week boundaries (Sun-Sat)',
 }
+
+
+# =============================================================================
+# PAPER ANALYSIS PATHS
+# =============================================================================
+
+PAPER_ANALYSIS_FILE = CATTLE_DATA_DIR / 'paper_analysis_ready.csv'
+PAPER_FIGURES_DIR = FIGURES_DIR / 'paper'
+PAPER_MODELS_DIR = CATTLE_DATA_DIR / 'models'
+
+# =============================================================================
+# MODEL CONFIGURATION
+# =============================================================================
+
+MODEL_TRAIN_END = 2015  # Train: 1984-2015
+MODEL_TEST_START = 2016  # Test: 2016-2025
+CV_N_SPLITS = 5
+CV_GAP = 4  # Gap weeks to prevent leakage from rolling features
+
+# Zero-inflated predictor columns (sparse hour counts)
+ZERO_INFLATED_COLS = [
+    'mean_daytime_hours_above_35',
+    'mean_daytime_hours_above_40',
+    'mean_nighttime_hours_above_24',
+]
+
+# Rolling window sizes (weeks)
+ROLLING_WINDOWS = [2, 4, 8]
