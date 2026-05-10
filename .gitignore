@@ -72,6 +72,9 @@ tests/*.pdf
 # Google Drive metadata
 .~*
 
+# Climate indices (large external datasets)
+climate_indices/
+
 # Cattle data - Excel files and processed data too large for git
 *.xlsx
 ~$*.xlsx
