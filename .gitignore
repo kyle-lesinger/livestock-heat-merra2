@@ -80,3 +80,5 @@ climate_indices/
 ~$*.xlsx
 cattle_data/*
 !cattle_data/README.md
+# Large AR model pickles (>600MB each)
+data/cattle_data/models/ar_model_*.pkl

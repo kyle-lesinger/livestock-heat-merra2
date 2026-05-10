@@ -283,3 +283,10 @@ mean_precip_total_roll8_log1p
 heat_vpd_interaction
 extreme_heat_poor_recovery
 drought_heat_interaction
+roni
+roni_lag4
+roni_lag8
+roni_lag12
+is_el_nino
+is_la_nina
+roni_x_summer
